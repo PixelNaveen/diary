@@ -1,0 +1,871 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>6-Month Internship Diary — 2025/2026</title>
+<link href="https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700&family=Syne:wght@400;600;700;800&display=swap" rel="stylesheet"/>
+<style>
+:root{
+  --bg:#faf7f2;--card:#ffffff;--border:#e8ddd0;
+  --text:#3a3229;--muted:#9a8d7f;
+  --shadow:rgba(58,50,41,.07);--shadow-md:rgba(58,50,41,.13);
+  --m1:#e07a5f;--m2:#3d8b7a;--m3:#7b68c8;--m4:#d4a254;--m5:#c0616a;--m6:#4a9bb5;
+}
+*{margin:0;padding:0;box-sizing:border-box;}
+body{background:var(--bg);color:var(--text);font-family:"Syne",sans-serif;overflow-x:hidden;}
+body::before{content:"";position:fixed;inset:0;background-image:radial-gradient(circle,rgba(224,122,95,.05) 1px,transparent 1px);background-size:30px 30px;pointer-events:none;z-index:0;}
+
+/* ── HEADER ── */
+header{position:relative;z-index:10;padding:56px 40px 40px;text-align:center;border-bottom:1px solid var(--border);background:linear-gradient(180deg,#fff8f0,var(--bg));}
+.htag{font-family:"Space Mono",monospace;font-size:11px;color:var(--m1);letter-spacing:4px;text-transform:uppercase;margin-bottom:14px;display:block;}
+header h1{font-size:clamp(1.9rem,5vw,3.5rem);font-weight:800;line-height:1.06;background:linear-gradient(135deg,var(--text) 0%,var(--m1) 55%,var(--m2) 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin-bottom:10px;}
+header p{font-family:"Space Mono",monospace;font-size:12px;color:var(--muted);letter-spacing:.8px;}
+.stats{display:flex;justify-content:center;gap:14px;margin-top:28px;flex-wrap:wrap;}
+.stat{background:var(--card);border:1px solid var(--border);border-radius:14px;padding:13px 20px;box-shadow:0 2px 14px var(--shadow);text-align:center;transition:transform .2s,box-shadow .2s;}
+.stat:hover{transform:translateY(-2px);box-shadow:0 8px 24px var(--shadow-md);}
+.sn{font-size:1.75rem;font-weight:800;color:var(--m1);display:block;line-height:1;}
+.sl{font-family:"Space Mono",monospace;font-size:9px;color:var(--muted);letter-spacing:2px;text-transform:uppercase;margin-top:3px;}
+
+/* ── MONTH TABS ── */
+.tabs{display:flex;justify-content:center;gap:8px;padding:26px 20px 0;flex-wrap:wrap;position:relative;z-index:10;}
+.tab{font-family:"Space Mono",monospace;font-size:10px;letter-spacing:1.5px;text-transform:uppercase;border:1px solid var(--border);background:var(--card);color:var(--muted);padding:7px 14px;border-radius:20px;cursor:pointer;transition:all .2s;user-select:none;}
+.tab[data-m="1"]:hover,.tab[data-m="1"].on{background:var(--m1);color:#fff;border-color:var(--m1);}
+.tab[data-m="2"]:hover,.tab[data-m="2"].on{background:var(--m2);color:#fff;border-color:var(--m2);}
+.tab[data-m="3"]:hover,.tab[data-m="3"].on{background:var(--m3);color:#fff;border-color:var(--m3);}
+.tab[data-m="4"]:hover,.tab[data-m="4"].on{background:var(--m4);color:#fff;border-color:var(--m4);}
+.tab[data-m="5"]:hover,.tab[data-m="5"].on{background:var(--m5);color:#fff;border-color:var(--m5);}
+.tab[data-m="6"]:hover,.tab[data-m="6"].on{background:var(--m6);color:#fff;border-color:var(--m6);}
+
+/* ── CAROUSEL ── */
+.cs{position:relative;z-index:10;padding:36px 20px 56px;max-width:1040px;margin:0 auto;}
+.ch{display:flex;align-items:center;justify-content:space-between;margin-bottom:22px;padding:0 4px;}
+.ct{font-family:"Space Mono",monospace;font-size:10px;color:var(--muted);letter-spacing:3px;text-transform:uppercase;}
+.cn{display:flex;gap:10px;align-items:center;}
+.nb{width:42px;height:42px;border:1px solid var(--border);background:var(--card);color:var(--text);cursor:pointer;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:17px;transition:all .25s;user-select:none;box-shadow:0 2px 8px var(--shadow);}
+.nb:hover{border-color:var(--m1);color:#fff;background:var(--m1);transform:scale(1.08);}
+.nb:active{transform:scale(.95);}
+.sc{font-family:"Space Mono",monospace;font-size:12px;color:var(--muted);min-width:50px;text-align:center;}
+.vp{overflow:hidden;border-radius:20px;}
+.tr{display:flex;transition:transform .5s cubic-bezier(.77,0,.175,1);will-change:transform;}
+.sl{flex:0 0 100%;min-width:0;}
+
+/* ── CARD ── */
+.wc{background:var(--card);border:1px solid var(--border);border-radius:20px;overflow:hidden;box-shadow:0 4px 28px var(--shadow),0 1px 4px var(--shadow);margin:0 3px;position:relative;}
+.wc::before{content:"";position:absolute;top:0;left:0;right:0;height:4px;border-radius:4px 4px 0 0;}
+.sl.m1 .wc::before{background:linear-gradient(90deg,var(--m1),#f4a07e);}
+.sl.m2 .wc::before{background:linear-gradient(90deg,var(--m2),#6dccb8);}
+.sl.m3 .wc::before{background:linear-gradient(90deg,var(--m3),#a99de0);}
+.sl.m4 .wc::before{background:linear-gradient(90deg,var(--m4),#e8c882);}
+.sl.m5 .wc::before{background:linear-gradient(90deg,var(--m5),#e09898);}
+.sl.m6 .wc::before{background:linear-gradient(90deg,var(--m6),#7ecde0);}
+
+/* card header */
+.ch2{padding:22px 26px 16px;display:flex;justify-content:space-between;align-items:flex-start;border-bottom:1px solid var(--border);}
+.wb{font-family:"Space Mono",monospace;font-size:10px;letter-spacing:1.5px;text-transform:uppercase;padding:3px 10px;border-radius:20px;display:inline-block;margin-bottom:7px;color:#fff;}
+.sl.m1 .wb{background:var(--m1);}
+.sl.m2 .wb{background:var(--m2);}
+.sl.m3 .wb{background:var(--m3);}
+.sl.m4 .wb{background:var(--m4);}
+.sl.m5 .wb{background:var(--m5);}
+.sl.m6 .wb{background:var(--m6);}
+.wt{font-size:1.1rem;font-weight:700;color:var(--text);line-height:1.3;margin-bottom:3px;}
+.wd{font-family:"Space Mono",monospace;font-size:11px;color:var(--muted);}
+.wm{text-align:right;flex-shrink:0;margin-left:14px;}
+.hb{font-size:1.9rem;font-weight:800;color:var(--m1);display:block;line-height:1;}
+.hl{font-family:"Space Mono",monospace;font-size:9px;color:var(--muted);letter-spacing:2px;text-transform:uppercase;}
+
+/* table */
+.cb{padding:0 26px;}
+.dt{width:100%;border-collapse:collapse;font-size:12.5px;}
+.dt th{font-family:"Space Mono",monospace;font-size:9px;letter-spacing:2px;text-transform:uppercase;color:var(--muted);padding:9px 8px 7px;text-align:left;border-bottom:1px solid var(--border);}
+.dt td{padding:8px 8px;border-bottom:1px solid rgba(232,221,208,.45);vertical-align:top;}
+.dt tbody tr:last-child td{border-bottom:none;}
+.dn{font-weight:700;font-size:12px;width:34px;white-space:nowrap;}
+.dd{font-family:"Space Mono",monospace;font-size:11px;color:var(--muted);width:58px;white-space:nowrap;}
+.tc{display:flex;gap:8px;align-items:flex-start;}
+.tk{font-family:"Space Mono",monospace;font-size:10px;padding:2px 7px;border-radius:6px;white-space:nowrap;flex-shrink:0;border:1px solid;margin-top:1px;}
+.sl.m1 .tk{background:rgba(224,122,95,.1);color:var(--m1);border-color:rgba(224,122,95,.25);}
+.sl.m2 .tk{background:rgba(61,139,122,.1);color:var(--m2);border-color:rgba(61,139,122,.25);}
+.sl.m3 .tk{background:rgba(123,104,200,.1);color:var(--m3);border-color:rgba(123,104,200,.25);}
+.sl.m4 .tk{background:rgba(212,162,84,.1);color:var(--m4);border-color:rgba(212,162,84,.25);}
+.sl.m5 .tk{background:rgba(192,97,106,.1);color:var(--m5);border-color:rgba(192,97,106,.25);}
+.sl.m6 .tk{background:rgba(74,155,181,.1);color:var(--m6);border-color:rgba(74,155,181,.25);}
+.tk.plain{background:rgba(154,141,127,.08);color:var(--muted);border-color:rgba(154,141,127,.2);}
+.tx{font-size:12.5px;color:var(--text);line-height:1.5;}
+tr.hol td{background:rgba(248,238,228,.65);}
+tr.hol .tx{color:#b08060;font-style:italic;}
+tr.lv td{background:rgba(237,248,240,.65);}
+tr.lv .tx{color:#6aaa7e;font-style:italic;}
+tr.sp td{background:rgba(212,162,84,.07);}
+
+/* footer */
+.cf{padding:16px 26px 22px;display:grid;grid-template-columns:1fr 1fr;gap:18px;border-top:1px solid var(--border);background:rgba(250,247,242,.55);}
+.cf h4{font-family:"Space Mono",monospace;font-size:9px;letter-spacing:2px;text-transform:uppercase;color:var(--muted);margin-bottom:9px;}
+.tl{display:flex;flex-wrap:wrap;gap:5px;}
+.tt{font-family:"Space Mono",monospace;font-size:10px;background:var(--bg);border:1px solid var(--border);color:var(--text);padding:3px 8px;border-radius:7px;}
+.kl{list-style:none;display:flex;flex-direction:column;gap:4px;}
+.kl li{font-size:12px;color:var(--text);padding-left:14px;position:relative;line-height:1.45;}
+.kl li::before{content:"→";position:absolute;left:0;font-size:10px;top:2px;color:var(--m1);}
+
+/* dots */
+.dots{display:flex;justify-content:center;gap:5px;padding:18px 0 0;}
+.dot{width:8px;height:8px;border-radius:50%;background:var(--border);cursor:pointer;transition:all .25s;}
+.dot.on{width:24px;border-radius:4px;background:var(--m1);}
+
+/* summary table at bottom */
+.summary{position:relative;z-index:10;max-width:700px;margin:0 auto 60px;padding:0 20px;}
+.summary h2{font-size:1.1rem;font-weight:700;text-align:center;margin-bottom:20px;color:var(--text);}
+.summary h2 span{font-family:"Space Mono",monospace;font-size:10px;display:block;color:var(--muted);letter-spacing:3px;text-transform:uppercase;margin-bottom:6px;}
+.stbl{width:100%;border-collapse:collapse;background:var(--card);border-radius:16px;overflow:hidden;border:1px solid var(--border);box-shadow:0 4px 20px var(--shadow);}
+.stbl td{padding:12px 20px;border-bottom:1px solid var(--border);font-size:13px;}
+.stbl tr:last-child td{border-bottom:none;}
+.stbl td:first-child{font-family:"Space Mono",monospace;font-size:10px;letter-spacing:1px;text-transform:uppercase;color:var(--muted);width:40%;}
+.stbl td:last-child{font-weight:600;color:var(--text);}
+.stbl tr.hi td{background:rgba(224,122,95,.05);}
+.stbl tr.hi td:last-child{color:var(--m1);font-size:14px;}
+
+@media(max-width:620px){
+  header{padding:36px 16px 26px;}
+  .ch2{padding:16px 16px 12px;}
+  .cb{padding:0 16px;}
+  .cf{padding:12px 16px 18px;grid-template-columns:1fr;}
+  .stats{gap:10px;}
+  .stat{padding:10px 14px;}
+  .wt{font-size:1rem;}
+  .hb{font-size:1.6rem;}
+}
+</style>
+</head>
+<body>
+
+<header>
+  <span class="htag">Software Development Internship · Sri Lanka 2025–2026</span>
+  <h1>6-Month Internship Diary</h1>
+  <p>August 2025 – January 2026 &nbsp;·&nbsp; Laboratory Management Web System</p>
+  <div class="stats">
+    <div class="stat"><span class="sn">26</span><span class="sl">Weeks</span></div>
+    <div class="stat"><span class="sn">109</span><span class="sl">Working Days</span></div>
+    <div class="stat"><span class="sn">763</span><span class="sl">Hours</span></div>
+    <div class="stat"><span class="sn">7</span><span class="sl">Holidays</span></div>
+    <div class="stat"><span class="sn">14</span><span class="sl">Leaves</span></div>
+    <div class="stat"><span class="sn">5</span><span class="sl">NVQ Modules</span></div>
+  </div>
+</header>
+
+<div class="tabs">
+  <button class="tab on" data-m="1">Aug · Month 1</button>
+  <button class="tab" data-m="2">Sep · Month 2</button>
+  <button class="tab" data-m="3">Oct · Month 3</button>
+  <button class="tab" data-m="4">Nov · Month 4</button>
+  <button class="tab" data-m="5">Dec · Month 5</button>
+  <button class="tab" data-m="6">Jan · Month 6</button>
+</div>
+
+<section class="cs">
+  <div class="ch">
+    <span class="ct">Weekly Log</span>
+    <div class="cn">
+      <button class="nb" id="prev">&#8592;</button>
+      <span class="sc" id="ctr">1 / 26</span>
+      <button class="nb" id="next">&#8594;</button>
+    </div>
+  </div>
+
+  <div class="vp">
+    <div class="tr" id="track">
+
+<!-- ══════════════════════ WEEK 1 ══════════════════════ -->
+<div class="sl m1" data-m="1">
+<div class="wc">
+  <div class="ch2">
+    <div><span class="wb">Week 01 · Month 1</span><div class="wt">Introduction &amp; Requirement Gathering</div><div class="wd">Aug 4 – 8, 2025</div></div>
+    <div class="wm"><span class="hb">28</span><span class="hl">Hours</span></div>
+  </div>
+  <div class="cb">
+    <table class="dt"><thead><tr><th>Day</th><th>Date</th><th>Task No. &amp; Work Done</th></tr></thead>
+    <tbody>
+      <tr><td class="dn">Mon</td><td class="dd">04 Aug</td><td><div class="tc"><span class="tk plain">—</span><span class="tx">Attended orientation, briefed on company projects and software development workflow.</span></div></td></tr>
+      <tr><td class="dn">Tue</td><td class="dd">05 Aug</td><td><div class="tc"><span class="tk plain">—</span><span class="tx">Assigned to lab management system project, studied project brief and client domain.</span></div></td></tr>
+      <tr><td class="dn">Wed</td><td class="dd">06 Aug</td><td><div class="tc"><span class="tk">M-02/B1</span><span class="tx">Visited client site, interviewed Lab Technicians and Assistants, documented workflow challenges.</span></div></td></tr>
+      <tr><td class="dn">Thu</td><td class="dd">07 Aug</td><td><div class="tc"><span class="tk">M-02/B1</span><span class="tx">Documented functional requirements, identified three user roles (Admin, Technician, Assistant).</span></div></td></tr>
+      <tr class="hol"><td class="dn">Fri</td><td class="dd">08 Aug</td><td><div class="tc"><span class="tk plain">—</span><span class="tx">🏛 Public Holiday – Nikini Full Moon Poya Day</span></div></td></tr>
+    </tbody></table>
+  </div>
+  <div class="cf">
+    <div><h4>Tools Used</h4><div class="tl"><span class="tt">VS Code</span><span class="tt">draw.io</span><span class="tt">MS Word</span><span class="tt">MySQL Workbench</span><span class="tt">XAMPP</span></div></div>
+    <div><h4>Knowledge Gained</h4><ul class="kl"><li>Laboratory workflow and manual system pain points</li><li>Requirement gathering via structured client interviews</li><li>Software dev methodologies (Waterfall, Agile) and MVC</li><li>Differentiating stakeholder types and requirements</li><li>Active listening in professional client meetings</li></ul></div>
+  </div>
+</div>
+</div>
+
+<!-- ══════════════════════ WEEK 2 ══════════════════════ -->
+<div class="sl m1" data-m="1">
+<div class="wc">
+  <div class="ch2">
+    <div><span class="wb">Week 02 · Month 1</span><div class="wt">System Design &amp; Database Planning</div><div class="wd">Aug 11 – 15, 2025</div></div>
+    <div class="wm"><span class="hb">28</span><span class="hl">Hours</span></div>
+  </div>
+  <div class="cb">
+    <table class="dt"><thead><tr><th>Day</th><th>Date</th><th>Task No. &amp; Work Done</th></tr></thead>
+    <tbody>
+      <tr><td class="dn">Mon</td><td class="dd">11 Aug</td><td><div class="tc"><span class="tk">M-02/B3</span><span class="tx">Created flowcharts and DFDs for sample management workflow from submission to report generation.</span></div></td></tr>
+      <tr><td class="dn">Tue</td><td class="dd">12 Aug</td><td><div class="tc"><span class="tk">M-02/B4</span><span class="tx">Drew Activity Diagrams and Use Case scenarios for all user roles.</span></div></td></tr>
+      <tr class="lv"><td class="dn">Wed</td><td class="dd">13 Aug</td><td><div class="tc"><span class="tk plain">—</span><span class="tx">🌿 Casual Leave</span></div></td></tr>
+      <tr><td class="dn">Thu</td><td class="dd">14 Aug</td><td><div class="tc"><span class="tk">M-02/B5</span><span class="tx">Prepared Software Requirement Document (SRD) with functional and non-functional requirements.</span></div></td></tr>
+      <tr><td class="dn">Fri</td><td class="dd">15 Aug</td><td><div class="tc"><span class="tk">M-03/C1</span><span class="tx">Studied MySQL advantages, researched database types, selected relational DB for the project.</span></div></td></tr>
+    </tbody></table>
+  </div>
+  <div class="cf">
+    <div><h4>Tools Used</h4><div class="tl"><span class="tt">draw.io</span><span class="tt">MS Word</span><span class="tt">MySQL Workbench</span><span class="tt">XAMPP</span><span class="tt">Chrome DevTools</span></div></div>
+    <div><h4>Knowledge Gained</h4><ul class="kl"><li>Structured diagrams: flowcharts, DFD, use cases</li><li>Requirements documentation best practices</li><li>Relational database concepts and SQL fundamentals</li><li>UML (Unified Modeling Language) diagram standards</li><li>Translating client needs into technical specifications</li></ul></div>
+  </div>
+</div>
+</div>
+
+<!-- ══════════════════════ WEEK 3 ══════════════════════ -->
+<div class="sl m1" data-m="1">
+<div class="wc">
+  <div class="ch2">
+    <div><span class="wb">Week 03 · Month 1</span><div class="wt">Database Design &amp; ER Modeling</div><div class="wd">Aug 18 – 22, 2025</div></div>
+    <div class="wm"><span class="hb">28</span><span class="hl">Hours</span></div>
+  </div>
+  <div class="cb">
+    <table class="dt"><thead><tr><th>Day</th><th>Date</th><th>Task No. &amp; Work Done</th></tr></thead>
+    <tbody>
+      <tr><td class="dn">Mon</td><td class="dd">18 Aug</td><td><div class="tc"><span class="tk">M-03/C3</span><span class="tx">Designed ER diagram identifying entities: users, clients, samples, parameters and methods.</span></div></td></tr>
+      <tr><td class="dn">Tue</td><td class="dd">19 Aug</td><td><div class="tc"><span class="tk">M-03/C3</span><span class="tx">Defined cardinality (one-to-many, many-to-many) and applied relationship mapping.</span></div></td></tr>
+      <tr><td class="dn">Wed</td><td class="dd">20 Aug</td><td><div class="tc"><span class="tk">M-03/C4</span><span class="tx">Converted ER diagram to relational database schema with proper table structures.</span></div></td></tr>
+      <tr class="lv"><td class="dn">Thu</td><td class="dd">21 Aug</td><td><div class="tc"><span class="tk plain">—</span><span class="tx">🌿 Casual Leave</span></div></td></tr>
+      <tr><td class="dn">Fri</td><td class="dd">22 Aug</td><td><div class="tc"><span class="tk">M-03/C5</span><span class="tx">Applied database normalization to 3NF to eliminate redundancy and ensure data integrity.</span></div></td></tr>
+    </tbody></table>
+  </div>
+  <div class="cf">
+    <div><h4>Tools Used</h4><div class="tl"><span class="tt">draw.io</span><span class="tt">MySQL Workbench</span><span class="tt">XAMPP</span><span class="tt">VS Code</span><span class="tt">MS Word</span></div></div>
+    <div><h4>Knowledge Gained</h4><ul class="kl"><li>ER diagram design with cardinality notation</li><li>Normalization principles (1NF, 2NF, 3NF)</li><li>Converting conceptual to physical database schema</li><li>Choosing data types (VARCHAR, INT, DECIMAL, DATE)</li><li>Identifying and resolving database anomalies</li></ul></div>
+  </div>
+</div>
+</div>
+
+<!-- ══════════════════════ WEEK 4 ══════════════════════ -->
+<div class="sl m1" data-m="1">
+<div class="wc">
+  <div class="ch2">
+    <div><span class="wb">Week 04 · Month 1</span><div class="wt">Database Implementation</div><div class="wd">Aug 25 – 29, 2025</div></div>
+    <div class="wm"><span class="hb">28</span><span class="hl">Hours</span></div>
+  </div>
+  <div class="cb">
+    <table class="dt"><thead><tr><th>Day</th><th>Date</th><th>Task No. &amp; Work Done</th></tr></thead>
+    <tbody>
+      <tr><td class="dn">Mon</td><td class="dd">25 Aug</td><td><div class="tc"><span class="tk">M-03/C6</span><span class="tx">Created database tables with proper data types, primary keys and constraints.</span></div></td></tr>
+      <tr><td class="dn">Tue</td><td class="dd">26 Aug</td><td><div class="tc"><span class="tk">M-03/C6</span><span class="tx">Implemented foreign keys, created sample_items and parameter_methods junction tables.</span></div></td></tr>
+      <tr class="lv"><td class="dn">Wed</td><td class="dd">27 Aug</td><td><div class="tc"><span class="tk plain">—</span><span class="tx">🌿 Casual Leave</span></div></td></tr>
+      <tr><td class="dn">Thu</td><td class="dd">28 Aug</td><td><div class="tc"><span class="tk">M-05/E5</span><span class="tx">Set up PHP PDO database connection, tested connectivity and basic CRUD operations.</span></div></td></tr>
+      <tr><td class="dn">Fri</td><td class="dd">29 Aug</td><td><div class="tc"><span class="tk">M-05/E1</span><span class="tx">Created static HTML pages for login, dashboard and main navigation structure.</span></div></td></tr>
+    </tbody></table>
+  </div>
+  <div class="cf">
+    <div><h4>Tools Used</h4><div class="tl"><span class="tt">MySQL Workbench</span><span class="tt">VS Code</span><span class="tt">XAMPP</span><span class="tt">Chrome DevTools</span><span class="tt">Postman</span></div></div>
+    <div><h4>Knowledge Gained</h4><ul class="kl"><li>Foreign key and referential integrity (CASCADE, RESTRICT)</li><li>PDO for secure DB connections with prepared statements</li><li>HTML semantic markup (header, nav, main, footer)</li><li>Basic CRUD operations in PHP with error handling</li><li>AUTO_INCREMENT and NOT NULL constraints in table design</li></ul></div>
+  </div>
+</div>
+</div>
+
+<!-- ══════════════════════ WEEK 5 ══════════════════════ -->
+<div class="sl m2" data-m="2">
+<div class="wc">
+  <div class="ch2">
+    <div><span class="wb">Week 05 · Month 2</span><div class="wt">Frontend Development Start</div><div class="wd">Sep 1 – 5, 2025</div></div>
+    <div class="wm"><span class="hb">28</span><span class="hl">Hours</span></div>
+  </div>
+  <div class="cb">
+    <table class="dt"><thead><tr><th>Day</th><th>Date</th><th>Task No. &amp; Work Done</th></tr></thead>
+    <tbody>
+      <tr><td class="dn">Mon</td><td class="dd">01 Sep</td><td><div class="tc"><span class="tk">M-05/E3</span><span class="tx">Created CSS stylesheets for forms, tables and navigation elements.</span></div></td></tr>
+      <tr><td class="dn">Tue</td><td class="dd">02 Sep</td><td><div class="tc"><span class="tk">M-05/E4</span><span class="tx">Added JavaScript client-side validation with regex for email, phone and required fields.</span></div></td></tr>
+      <tr class="lv"><td class="dn">Wed</td><td class="dd">03 Sep</td><td><div class="tc"><span class="tk plain">—</span><span class="tx">🌿 Casual Leave</span></div></td></tr>
+      <tr><td class="dn">Thu</td><td class="dd">04 Sep</td><td><div class="tc"><span class="tk">M-05/E5</span><span class="tx">Built login page with PHP authentication, session management and password_hash().</span></div></td></tr>
+      <tr><td class="dn">Fri</td><td class="dd">05 Sep</td><td><div class="tc"><span class="tk">M-05/E5</span><span class="tx">Created user registration with password hashing, email validation and duplicate prevention.</span></div></td></tr>
+    </tbody></table>
+  </div>
+  <div class="cf">
+    <div><h4>Tools Used</h4><div class="tl"><span class="tt">VS Code</span><span class="tt">Bootstrap 5</span><span class="tt">Chrome DevTools</span><span class="tt">XAMPP</span><span class="tt">Postman</span></div></div>
+    <div><h4>Knowledge Gained</h4><ul class="kl"><li>CSS styling and responsive mobile-first design</li><li>JavaScript regex validation patterns</li><li>PHP session management and security best practices</li><li>bcrypt hashing (password_hash, password_verify)</li><li>Cookie management and HttpOnly/Secure flags</li></ul></div>
+  </div>
+</div>
+</div>
+
+<!-- ══════════════════════ WEEK 6 ══════════════════════ -->
+<div class="sl m2" data-m="2">
+<div class="wc">
+  <div class="ch2">
+    <div><span class="wb">Week 06 · Month 2</span><div class="wt">Core Modules Development</div><div class="wd">Sep 8 – 12, 2025</div></div>
+    <div class="wm"><span class="hb">35</span><span class="hl">Hours</span></div>
+  </div>
+  <div class="cb">
+    <table class="dt"><thead><tr><th>Day</th><th>Date</th><th>Task No. &amp; Work Done</th></tr></thead>
+    <tbody>
+      <tr><td class="dn">Mon</td><td class="dd">08 Sep</td><td><div class="tc"><span class="tk">M-05/E5</span><span class="tx">Built User Management module with MVC, CRUD operations, role assignment and soft deactivation.</span></div></td></tr>
+      <tr><td class="dn">Tue</td><td class="dd">09 Sep</td><td><div class="tc"><span class="tk">M-05/E5</span><span class="tx">Created Client Management with duplicate prevention and AJAX-powered table.</span></div></td></tr>
+      <tr><td class="dn">Wed</td><td class="dd">10 Sep</td><td><div class="tc"><span class="tk">M-05/E5</span><span class="tx">Developed City Management with auto-capitalization and reactivation of deleted records.</span></div></td></tr>
+      <tr><td class="dn">Thu</td><td class="dd">11 Sep</td><td><div class="tc"><span class="tk">M-05/E5</span><span class="tx">Built Test Methods Management with status filters and standard body selection (ISO, SLS, APHA).</span></div></td></tr>
+      <tr><td class="dn">Fri</td><td class="dd">12 Sep</td><td><div class="tc"><span class="tk">M-05/E5</span><span class="tx">Created Parameter Management with many-to-many junction table and swab sync logic.</span></div></td></tr>
+    </tbody></table>
+  </div>
+  <div class="cf">
+    <div><h4>Tools Used</h4><div class="tl"><span class="tt">VS Code</span><span class="tt">MySQL Workbench</span><span class="tt">Bootstrap 5</span><span class="tt">XAMPP</span><span class="tt">Font Awesome</span></div></div>
+    <div><h4>Knowledge Gained</h4><ul class="kl"><li>MVC architecture with proper separation of concerns</li><li>CRUD with prepared statements (SQL injection prevention)</li><li>AJAX for seamless UX without page reload</li><li>Many-to-many relationships via junction tables</li><li>Soft-delete pattern using is_deleted flag</li></ul></div>
+  </div>
+</div>
+</div>
+
+<!-- ══════════════════════ WEEK 7 ══════════════════════ -->
+<div class="sl m2" data-m="2">
+<div class="wc">
+  <div class="ch2">
+    <div><span class="wb">Week 07 · Month 2</span><div class="wt">Advanced Modules Development</div><div class="wd">Sep 15 – 19, 2025</div></div>
+    <div class="wm"><span class="hb">28</span><span class="hl">Hours</span></div>
+  </div>
+  <div class="cb">
+    <table class="dt"><thead><tr><th>Day</th><th>Date</th><th>Task No. &amp; Work Done</th></tr></thead>
+    <tbody>
+      <tr><td class="dn">Mon</td><td class="dd">15 Sep</td><td><div class="tc"><span class="tk">M-05/E5</span><span class="tx">Developed Parameter Variants with auto-reactivation logic for duplicate soft-deleted records.</span></div></td></tr>
+      <tr class="lv"><td class="dn">Tue</td><td class="dd">16 Sep</td><td><div class="tc"><span class="tk plain">—</span><span class="tx">🌿 Casual Leave</span></div></td></tr>
+      <tr><td class="dn">Wed</td><td class="dd">17 Sep</td><td><div class="tc"><span class="tk">M-05/E5</span><span class="tx">Built Swab Pricing module and Extra Items Management with duplicate prevention.</span></div></td></tr>
+      <tr><td class="dn">Thu</td><td class="dd">18 Sep</td><td><div class="tc"><span class="tk">M-05/E5</span><span class="tx">Designed Sample Submission form with dynamic multi-sample item rows.</span></div></td></tr>
+      <tr><td class="dn">Fri</td><td class="dd">19 Sep</td><td><div class="tc"><span class="tk">M-05/E5</span><span class="tx">Implemented multi-table transaction handling using PDO beginTransaction() and commit().</span></div></td></tr>
+    </tbody></table>
+  </div>
+  <div class="cf">
+    <div><h4>Tools Used</h4><div class="tl"><span class="tt">VS Code</span><span class="tt">MySQL Workbench</span><span class="tt">JavaScript ES6</span><span class="tt">Bootstrap 5</span><span class="tt">Tom Select</span></div></div>
+    <div><h4>Knowledge Gained</h4><ul class="kl"><li>PDO transaction management (beginTransaction, rollback)</li><li>ACID properties in database transactions</li><li>Dynamic form row addition via JavaScript DOM</li><li>JavaScript event delegation for dynamic elements</li><li>Multi-select dropdown libraries (Tom Select)</li></ul></div>
+  </div>
+</div>
+</div>
+
+<!-- ══════════════════════ WEEK 8 ══════════════════════ -->
+<div class="sl m2" data-m="2">
+<div class="wc">
+  <div class="ch2">
+    <div><span class="wb">Week 08 · Month 2</span><div class="wt">Sample Management &amp; Form Generation</div><div class="wd">Sep 22 – 26, 2025</div></div>
+    <div class="wm"><span class="hb">28</span><span class="hl">Hours</span></div>
+  </div>
+  <div class="cb">
+    <table class="dt"><thead><tr><th>Day</th><th>Date</th><th>Task No. &amp; Work Done</th></tr></thead>
+    <tbody>
+      <tr><td class="dn">Mon</td><td class="dd">22 Sep</td><td><div class="tc"><span class="tk">M-05/E5</span><span class="tx">Built Sample Records view with filtering by status, payment, date range and search.</span></div></td></tr>
+      <tr><td class="dn">Tue</td><td class="dd">23 Sep</td><td><div class="tc"><span class="tk">M-05/E5</span><span class="tx">Created payment status modal with reference input and irreversible Paid status enforcement.</span></div></td></tr>
+      <tr class="lv"><td class="dn">Wed</td><td class="dd">24 Sep</td><td><div class="tc"><span class="tk plain">—</span><span class="tx">🌿 Casual Leave</span></div></td></tr>
+      <tr><td class="dn">Thu</td><td class="dd">25 Sep</td><td><div class="tc"><span class="tk">M-05/E5</span><span class="tx">Developed SAF generator with multi-page support and Acknowledgement Form with variant grouping.</span></div></td></tr>
+      <tr><td class="dn">Fri</td><td class="dd">26 Sep</td><td><div class="tc"><span class="tk">M-05/E5</span><span class="tx">Created Analyst Information Form with parameter highlighting and adaptive page sizing.</span></div></td></tr>
+    </tbody></table>
+  </div>
+  <div class="cf">
+    <div><h4>Tools Used</h4><div class="tl"><span class="tt">VS Code</span><span class="tt">html2pdf.js</span><span class="tt">CSS Print Queries</span><span class="tt">Bootstrap 5</span><span class="tt">Chrome DevTools</span></div></div>
+    <div><h4>Knowledge Gained</h4><ul class="kl"><li>PDF generation with html2pdf.js for printable forms</li><li>Advanced filtering with dynamic WHERE clauses</li><li>Pagination logic for multi-page print splits</li><li>CSS @media print for proper PDF rendering</li><li>Typography units (pt vs px) in print documents</li></ul></div>
+  </div>
+</div>
+</div>
+
+<!-- ══════════════════════ WEEK 9 ══════════════════════ -->
+<div class="sl m3" data-m="3">
+<div class="wc">
+  <div class="ch2">
+    <div><span class="wb">Week 09 · Month 3</span><div class="wt">UI/UX Enhancement</div><div class="wd">Sep 29 – Oct 3, 2025</div></div>
+    <div class="wm"><span class="hb">35</span><span class="hl">Hours</span></div>
+  </div>
+  <div class="cb">
+    <table class="dt"><thead><tr><th>Day</th><th>Date</th><th>Task No. &amp; Work Done</th></tr></thead>
+    <tbody>
+      <tr><td class="dn">Mon</td><td class="dd">29 Sep</td><td><div class="tc"><span class="tk">M-05/E7</span><span class="tx">Built responsive sidebar with RBAC menu visibility, accordion submenus and active state detection.</span></div></td></tr>
+      <tr><td class="dn">Tue</td><td class="dd">30 Sep</td><td><div class="tc"><span class="tk">M-05/E7</span><span class="tx">Created header with page title mapping, user dropdown, logo integration and mobile toggle.</span></div></td></tr>
+      <tr><td class="dn">Wed</td><td class="dd">01 Oct</td><td><div class="tc"><span class="tk">M-05/E7</span><span class="tx">Developed animated page loader for login/logout transitions with smooth fade-out effect.</span></div></td></tr>
+      <tr><td class="dn">Thu</td><td class="dd">02 Oct</td><td><div class="tc"><span class="tk">M-05/E7</span><span class="tx">Implemented responsive sidebar with mobile overlay and localStorage state persistence.</span></div></td></tr>
+      <tr><td class="dn">Fri</td><td class="dd">03 Oct</td><td><div class="tc"><span class="tk">M-07/G1</span><span class="tx">Started systematic testing of all modules to identify bugs and verify functionality.</span></div></td></tr>
+    </tbody></table>
+  </div>
+  <div class="cf">
+    <div><h4>Tools Used</h4><div class="tl"><span class="tt">VS Code</span><span class="tt">Bootstrap 5</span><span class="tt">JavaScript</span><span class="tt">Chrome DevTools</span><span class="tt">Font Awesome</span></div></div>
+    <div><h4>Knowledge Gained</h4><ul class="kl"><li>localStorage API for UI state persistence</li><li>RBAC menu filtering based on user roles</li><li>CSS transitions and transforms for animations</li><li>CSS z-index layering for modals and overlays</li><li>Mobile-first media queries (@media min-width)</li></ul></div>
+  </div>
+</div>
+</div>
+
+<!-- ══════════════════════ WEEK 10 ══════════════════════ -->
+<div class="sl m3" data-m="3">
+<div class="wc">
+  <div class="ch2">
+    <div><span class="wb">Week 10 · Month 3</span><div class="wt">Testing Phase 1</div><div class="wd">Oct 6 – 10, 2025</div></div>
+    <div class="wm"><span class="hb">28</span><span class="hl">Hours</span></div>
+  </div>
+  <div class="cb">
+    <table class="dt"><thead><tr><th>Day</th><th>Date</th><th>Task No. &amp; Work Done</th></tr></thead>
+    <tbody>
+      <tr class="hol"><td class="dn">Mon</td><td class="dd">06 Oct</td><td><div class="tc"><span class="tk plain">—</span><span class="tx">🏛 Public Holiday – Vap Full Moon Poya Day</span></div></td></tr>
+      <tr><td class="dn">Tue</td><td class="dd">07 Oct</td><td><div class="tc"><span class="tk">M-07/G2</span><span class="tx">Tested authentication: login, logout, session timeout and password change functionality.</span></div></td></tr>
+      <tr><td class="dn">Wed</td><td class="dd">08 Oct</td><td><div class="tc"><span class="tk">M-07/G3</span><span class="tx">Performed integration testing on CRUD modules, created test plan for sample submission.</span></div></td></tr>
+      <tr><td class="dn">Thu</td><td class="dd">09 Oct</td><td><div class="tc"><span class="tk">M-07/G5</span><span class="tx">Wrote test cases for SAF, Acknowledgement and Analyst form generation modules.</span></div></td></tr>
+      <tr><td class="dn">Fri</td><td class="dd">10 Oct</td><td><div class="tc"><span class="tk">M-07/G6</span><span class="tx">Conducted QA tests across all modules, documented bugs in test tracking spreadsheet.</span></div></td></tr>
+    </tbody></table>
+  </div>
+  <div class="cf">
+    <div><h4>Tools Used</h4><div class="tl"><span class="tt">Chrome DevTools</span><span class="tt">Postman</span><span class="tt">MySQL Workbench</span><span class="tt">Excel</span><span class="tt">XAMPP</span></div></div>
+    <div><h4>Knowledge Gained</h4><ul class="kl"><li>Systematic testing with documented test cases</li><li>Integration testing for multi-module systems</li><li>Bug documentation with clear reproduction steps</li><li>Postman for API endpoint testing and validation</li><li>Bug severity classification (Critical to Low)</li></ul></div>
+  </div>
+</div>
+</div>
+
+<!-- ══════════════════════ WEEK 11 ══════════════════════ -->
+<div class="sl m3" data-m="3">
+<div class="wc">
+  <div class="ch2">
+    <div><span class="wb">Week 11 · Month 3</span><div class="wt">Input Validation &amp; Security</div><div class="wd">Oct 13 – 17, 2025</div></div>
+    <div class="wm"><span class="hb">28</span><span class="hl">Hours</span></div>
+  </div>
+  <div class="cb">
+    <table class="dt"><thead><tr><th>Day</th><th>Date</th><th>Task No. &amp; Work Done</th></tr></thead>
+    <tbody>
+      <tr><td class="dn">Mon</td><td class="dd">13 Oct</td><td><div class="tc"><span class="tk">M-05/E5</span><span class="tx">Implemented client-side JS validation with regex for email, phone and numeric fields.</span></div></td></tr>
+      <tr class="lv"><td class="dn">Tue</td><td class="dd">14 Oct</td><td><div class="tc"><span class="tk plain">—</span><span class="tx">🌿 Casual Leave</span></div></td></tr>
+      <tr><td class="dn">Wed</td><td class="dd">15 Oct</td><td><div class="tc"><span class="tk">M-05/E5</span><span class="tx">Created server-side PHP validation, built FormDataValidator helper class for all forms.</span></div></td></tr>
+      <tr><td class="dn">Thu</td><td class="dd">16 Oct</td><td><div class="tc"><span class="tk">M-05/E5</span><span class="tx">Tested input fields with SQL injection and XSS payloads to verify sanitization.</span></div></td></tr>
+      <tr><td class="dn">Fri</td><td class="dd">17 Oct</td><td><div class="tc"><span class="tk">M-05/E5</span><span class="tx">Fixed validation bugs, added htmlspecialchars() to all output fields for XSS prevention.</span></div></td></tr>
+    </tbody></table>
+  </div>
+  <div class="cf">
+    <div><h4>Tools Used</h4><div class="tl"><span class="tt">VS Code</span><span class="tt">Chrome DevTools</span><span class="tt">Postman</span><span class="tt">XAMPP</span><span class="tt">OWASP Guidelines</span></div></div>
+    <div><h4>Knowledge Gained</h4><ul class="kl"><li>Dual validation: client-side (UX) + server-side (security)</li><li>SQL injection prevention with PDO prepared statements</li><li>XSS prevention using output encoding</li><li>PHP filter functions (filter_var, FILTER_VALIDATE_EMAIL)</li><li>OWASP Top 10 security vulnerabilities</li></ul></div>
+  </div>
+</div>
+</div>
+
+<!-- ══════════════════════ WEEK 12 ══════════════════════ -->
+<div class="sl m3" data-m="3">
+<div class="wc">
+  <div class="ch2">
+    <div><span class="wb">Week 12 · Month 3</span><div class="wt">Bug Fixes &amp; UI Refinements</div><div class="wd">Oct 20 – 24, 2025</div></div>
+    <div class="wm"><span class="hb">35</span><span class="hl">Hours</span></div>
+  </div>
+  <div class="cb">
+    <table class="dt"><thead><tr><th>Day</th><th>Date</th><th>Task No. &amp; Work Done</th></tr></thead>
+    <tbody>
+      <tr><td class="dn">Mon</td><td class="dd">20 Oct</td><td><div class="tc"><span class="tk">M-07/G6</span><span class="tx">Fixed bug in client management allowing duplicate phone numbers despite validation rules.</span></div></td></tr>
+      <tr><td class="dn">Tue</td><td class="dd">21 Oct</td><td><div class="tc"><span class="tk">M-07/G6</span><span class="tx">Resolved deleted variants still appearing in dropdown selections.</span></div></td></tr>
+      <tr><td class="dn">Wed</td><td class="dd">22 Oct</td><td><div class="tc"><span class="tk">M-07/G6</span><span class="tx">Fixed sample submission bug causing parameter selections to shift when removing items.</span></div></td></tr>
+      <tr><td class="dn">Thu</td><td class="dd">23 Oct</td><td><div class="tc"><span class="tk">M-05/E7</span><span class="tx">Improved mobile responsiveness, fixed table overflow and adjusted modal sizes.</span></div></td></tr>
+      <tr><td class="dn">Fri</td><td class="dd">24 Oct</td><td><div class="tc"><span class="tk">M-05/E7</span><span class="tx">Refined form layouts, standardized button styles and enhanced error message visibility.</span></div></td></tr>
+    </tbody></table>
+  </div>
+  <div class="cf">
+    <div><h4>Tools Used</h4><div class="tl"><span class="tt">VS Code</span><span class="tt">Chrome DevTools</span><span class="tt">Firefox DevTools</span><span class="tt">Bootstrap 5</span><span class="tt">XAMPP</span></div></div>
+    <div><h4>Knowledge Gained</h4><ul class="kl"><li>Debugging: reproduce → isolate → fix → verify</li><li>Composite key validation for duplicate prevention</li><li>JavaScript array manipulation (splice, filter, map)</li><li>Responsive testing across devices and screen sizes</li><li>Mobile touch interface design (min 44px targets)</li></ul></div>
+  </div>
+</div>
+</div>
+
+<!-- ══════════════════════ WEEK 13 ══════════════════════ -->
+<div class="sl m3" data-m="3">
+<div class="wc">
+  <div class="ch2">
+    <div><span class="wb">Week 13 · Month 3</span><div class="wt">Code Review &amp; Documentation</div><div class="wd">Oct 27 – 31, 2025</div></div>
+    <div class="wm"><span class="hb">28</span><span class="hl">Hours</span></div>
+  </div>
+  <div class="cb">
+    <table class="dt"><thead><tr><th>Day</th><th>Date</th><th>Task No. &amp; Work Done</th></tr></thead>
+    <tbody>
+      <tr><td class="dn">Mon</td><td class="dd">27 Oct</td><td><div class="tc"><span class="tk">M-02/B5</span><span class="tx">Reviewed all controllers and models, refactored duplicate code into reusable helper functions.</span></div></td></tr>
+      <tr><td class="dn">Tue</td><td class="dd">28 Oct</td><td><div class="tc"><span class="tk">M-02/B5</span><span class="tx">Added PHP DocBlock comments to all methods with parameters, return types and descriptions.</span></div></td></tr>
+      <tr class="lv"><td class="dn">Wed</td><td class="dd">29 Oct</td><td><div class="tc"><span class="tk plain">—</span><span class="tx">🌿 Casual Leave</span></div></td></tr>
+      <tr><td class="dn">Thu</td><td class="dd">30 Oct</td><td><div class="tc"><span class="tk">M-02/B5</span><span class="tx">Created technical documentation for database schema, relationships and system architecture.</span></div></td></tr>
+      <tr><td class="dn">Fri</td><td class="dd">31 Oct</td><td><div class="tc"><span class="tk">M-02/B5</span><span class="tx">Wrote Month 3 progress report and prepared presentation for supervisor and client review.</span></div></td></tr>
+    </tbody></table>
+  </div>
+  <div class="cf">
+    <div><h4>Tools Used</h4><div class="tl"><span class="tt">VS Code</span><span class="tt">phpDocumentor</span><span class="tt">MySQL Workbench</span><span class="tt">MS Word</span><span class="tt">draw.io</span><span class="tt">Git</span></div></div>
+    <div><h4>Knowledge Gained</h4><ul class="kl"><li>PHP DocBlock syntax (@param, @return, @throws)</li><li>Refactoring principles: DRY and KISS</li><li>Architecture diagrams for system components</li><li>Git version control and commit best practices</li><li>Technical vs user documentation differences</li></ul></div>
+  </div>
+</div>
+</div>
+
+<!-- ══════════════════════ WEEK 14 ══════════════════════ -->
+<div class="sl m4" data-m="4">
+<div class="wc">
+  <div class="ch2">
+    <div><span class="wb">Week 14 · Month 4</span><div class="wt">Advanced Features Implementation</div><div class="wd">Nov 3 – 7, 2025</div></div>
+    <div class="wm"><span class="hb">28</span><span class="hl">Hours</span></div>
+  </div>
+  <div class="cb">
+    <table class="dt"><thead><tr><th>Day</th><th>Date</th><th>Task No. &amp; Work Done</th></tr></thead>
+    <tbody>
+      <tr><td class="dn">Mon</td><td class="dd">03 Nov</td><td><div class="tc"><span class="tk">M-05/E5</span><span class="tx">Implemented advanced search with autocomplete and FULLTEXT indexing for faster record retrieval.</span></div></td></tr>
+      <tr><td class="dn">Tue</td><td class="dd">04 Nov</td><td><div class="tc"><span class="tk">M-05/E5</span><span class="tx">Enhanced filtering with multi-select options and session-based filter persistence.</span></div></td></tr>
+      <tr class="hol"><td class="dn">Wed</td><td class="dd">05 Nov</td><td><div class="tc"><span class="tk plain">—</span><span class="tx">🏛 Public Holiday – Il Full Moon Poya Day</span></div></td></tr>
+      <tr><td class="dn">Thu</td><td class="dd">06 Nov</td><td><div class="tc"><span class="tk">M-05/E5</span><span class="tx">Built date range picker with flatpickr.js, added pagination with configurable page sizes.</span></div></td></tr>
+      <tr><td class="dn">Fri</td><td class="dd">07 Nov</td><td><div class="tc"><span class="tk">M-05/E5</span><span class="tx">Optimized queries with composite indexes on frequently searched columns.</span></div></td></tr>
+    </tbody></table>
+  </div>
+  <div class="cf">
+    <div><h4>Tools Used</h4><div class="tl"><span class="tt">VS Code</span><span class="tt">flatpickr.js</span><span class="tt">MySQL EXPLAIN</span><span class="tt">Chrome DevTools</span><span class="tt">Bootstrap 5</span></div></div>
+    <div><h4>Knowledge Gained</h4><ul class="kl"><li>FULLTEXT indexing for fast multi-column text search</li><li>Autocomplete with debounce to reduce server load</li><li>Pagination with LIMIT and OFFSET clauses</li><li>SQL EXPLAIN for query performance analysis</li><li>JavaScript debounce/throttle patterns</li></ul></div>
+  </div>
+</div>
+</div>
+
+<!-- ══════════════════════ WEEK 15 ══════════════════════ -->
+<div class="sl m4" data-m="4">
+<div class="wc">
+  <div class="ch2">
+    <div><span class="wb">Week 15 · Month 4</span><div class="wt">Export &amp; Reporting Features</div><div class="wd">Nov 10 – 14, 2025</div></div>
+    <div class="wm"><span class="hb">28</span><span class="hl">Hours</span></div>
+  </div>
+  <div class="cb">
+    <table class="dt"><thead><tr><th>Day</th><th>Date</th><th>Task No. &amp; Work Done</th></tr></thead>
+    <tbody>
+      <tr><td class="dn">Mon</td><td class="dd">10 Nov</td><td><div class="tc"><span class="tk">M-05/E5</span><span class="tx">Implemented CSV export with UTF-8 BOM encoding for Excel compatibility.</span></div></td></tr>
+      <tr><td class="dn">Tue</td><td class="dd">11 Nov</td><td><div class="tc"><span class="tk">M-05/E5</span><span class="tx">Created Excel export using PhpSpreadsheet with bold headers and auto column width.</span></div></td></tr>
+      <tr><td class="dn">Wed</td><td class="dd">12 Nov</td><td><div class="tc"><span class="tk">M-05/E5</span><span class="tx">Built PDF export using TCPDF with custom headers, footers and professional formatting.</span></div></td></tr>
+      <tr class="lv"><td class="dn">Thu</td><td class="dd">13 Nov</td><td><div class="tc"><span class="tk plain">—</span><span class="tx">🌿 Casual Leave</span></div></td></tr>
+      <tr><td class="dn">Fri</td><td class="dd">14 Nov</td><td><div class="tc"><span class="tk">M-05/E5</span><span class="tx">Developed monthly summary report, tested exports with 500+ records and fixed memory issues.</span></div></td></tr>
+    </tbody></table>
+  </div>
+  <div class="cf">
+    <div><h4>Tools Used</h4><div class="tl"><span class="tt">VS Code</span><span class="tt">PhpSpreadsheet</span><span class="tt">TCPDF</span><span class="tt">MySQL Workbench</span><span class="tt">MS Excel</span></div></div>
+    <div><h4>Knowledge Gained</h4><ul class="kl"><li>CSV export with UTF-8 BOM for international characters</li><li>PhpSpreadsheet for formatted Excel generation</li><li>TCPDF for professional PDF generation</li><li>PHP memory management (ini_set, memory_limit)</li><li>HTTP headers for file downloads</li></ul></div>
+  </div>
+</div>
+</div>
+
+<!-- ══════════════════════ WEEK 16 ══════════════════════ -->
+<div class="sl m4" data-m="4">
+<div class="wc">
+  <div class="ch2">
+    <div><span class="wb">Week 16 · Month 4</span><div class="wt">Email Notification System</div><div class="wd">Nov 17 – 21, 2025</div></div>
+    <div class="wm"><span class="hb">35</span><span class="hl">Hours</span></div>
+  </div>
+  <div class="cb">
+    <table class="dt"><thead><tr><th>Day</th><th>Date</th><th>Task No. &amp; Work Done</th></tr></thead>
+    <tbody>
+      <tr><td class="dn">Mon</td><td class="dd">17 Nov</td><td><div class="tc"><span class="tk">M-05/E5</span><span class="tx">Configured PHPMailer with SMTP and set up email templates for system notifications.</span></div></td></tr>
+      <tr><td class="dn">Tue</td><td class="dd">18 Nov</td><td><div class="tc"><span class="tk">M-05/E5</span><span class="tx">Built email notification triggers for sample submission, payment received and report ready events.</span></div></td></tr>
+      <tr><td class="dn">Wed</td><td class="dd">19 Nov</td><td><div class="tc"><span class="tk">M-05/E5</span><span class="tx">Created responsive HTML email templates with branding and dynamic content placeholders.</span></div></td></tr>
+      <tr><td class="dn">Thu</td><td class="dd">20 Nov</td><td><div class="tc"><span class="tk">M-05/E5</span><span class="tx">Implemented background email queue with retry logic for failed deliveries.</span></div></td></tr>
+      <tr><td class="dn">Fri</td><td class="dd">21 Nov</td><td><div class="tc"><span class="tk">M-05/E5</span><span class="tx">Tested email delivery across Gmail, Outlook and Yahoo, fixed rendering issues.</span></div></td></tr>
+    </tbody></table>
+  </div>
+  <div class="cf">
+    <div><h4>Tools Used</h4><div class="tl"><span class="tt">VS Code</span><span class="tt">PHPMailer</span><span class="tt">SMTP/Gmail</span><span class="tt">Chrome DevTools</span><span class="tt">XAMPP</span></div></div>
+    <div><h4>Knowledge Gained</h4><ul class="kl"><li>PHPMailer with SMTP auth and SSL/TLS encryption</li><li>HTML email design with inline CSS</li><li>Background job processing using database queue</li><li>Retry with exponential backoff for failed operations</li><li>Email client compatibility (Outlook, Gmail, Apple)</li></ul></div>
+  </div>
+</div>
+</div>
+
+<!-- ══════════════════════ WEEK 17 ══════════════════════ -->
+<div class="sl m4" data-m="4">
+<div class="wc">
+  <div class="ch2">
+    <div><span class="wb">Week 17 · Month 4</span><div class="wt">Integration Testing &amp; UAT Preparation</div><div class="wd">Nov 24 – 28, 2025</div></div>
+    <div class="wm"><span class="hb">28</span><span class="hl">Hours</span></div>
+  </div>
+  <div class="cb">
+    <table class="dt"><thead><tr><th>Day</th><th>Date</th><th>Task No. &amp; Work Done</th></tr></thead>
+    <tbody>
+      <tr><td class="dn">Mon</td><td class="dd">24 Nov</td><td><div class="tc"><span class="tk">M-07/G6</span><span class="tx">Conducted integration testing between sample submission and form generation modules.</span></div></td></tr>
+      <tr class="lv"><td class="dn">Tue</td><td class="dd">25 Nov</td><td><div class="tc"><span class="tk plain">—</span><span class="tx">🌿 Casual Leave</span></div></td></tr>
+      <tr><td class="dn">Wed</td><td class="dd">26 Nov</td><td><div class="tc"><span class="tk">M-07/G6</span><span class="tx">Tested role permissions and performed stress testing with 50 concurrent sample items.</span></div></td></tr>
+      <tr><td class="dn">Thu</td><td class="dd">27 Nov</td><td><div class="tc"><span class="tk">M-07/G7</span><span class="tx">Created UAT checklist covering all user workflows with expected results.</span></div></td></tr>
+      <tr><td class="dn">Fri</td><td class="dd">28 Nov</td><td><div class="tc"><span class="tk">M-04/D9</span><span class="tx">Prepared User Guide Part 1 covering login, user management and client management.</span></div></td></tr>
+    </tbody></table>
+  </div>
+  <div class="cf">
+    <div><h4>Tools Used</h4><div class="tl"><span class="tt">Postman</span><span class="tt">Apache JMeter</span><span class="tt">MS Word</span><span class="tt">Snagit</span><span class="tt">Excel</span></div></div>
+    <div><h4>Knowledge Gained</h4><ul class="kl"><li>Integration testing for multi-module systems</li><li>RBAC access control verification and testing</li><li>Stress testing with Apache JMeter</li><li>Comprehensive UAT checklist creation</li><li>Screenshot annotation for user documentation</li></ul></div>
+  </div>
+</div>
+</div>
+
+<!-- ══════════════════════ WEEK 18 ══════════════════════ -->
+<div class="sl m5" data-m="5">
+<div class="wc">
+  <div class="ch2">
+    <div><span class="wb">Week 18 · Month 5</span><div class="wt">Performance Optimization</div><div class="wd">Dec 1 – 5, 2025</div></div>
+    <div class="wm"><span class="hb">28</span><span class="hl">Hours</span></div>
+  </div>
+  <div class="cb">
+    <table class="dt"><thead><tr><th>Day</th><th>Date</th><th>Task No. &amp; Work Done</th></tr></thead>
+    <tbody>
+      <tr><td class="dn">Mon</td><td class="dd">01 Dec</td><td><div class="tc"><span class="tk">M-05/E5</span><span class="tx">Analyzed page load times using Chrome Lighthouse, identified slow queries in dashboard.</span></div></td></tr>
+      <tr><td class="dn">Tue</td><td class="dd">02 Dec</td><td><div class="tc"><span class="tk">M-05/E5</span><span class="tx">Compressed image assets and minified CSS/JavaScript files for faster page loading.</span></div></td></tr>
+      <tr class="sp"><td class="dn">Wed</td><td class="dd">03 Dec</td><td><div class="tc"><span class="tk plain">—</span><span class="tx">🌊 Attended Ocean Day awareness session at client premises as company representative.</span></div></td></tr>
+      <tr class="hol"><td class="dn">Thu</td><td class="dd">04 Dec</td><td><div class="tc"><span class="tk plain">—</span><span class="tx">🏛 Public Holiday – Unduvap Full Moon Poya Day</span></div></td></tr>
+      <tr><td class="dn">Fri</td><td class="dd">05 Dec</td><td><div class="tc"><span class="tk">M-05/E5</span><span class="tx">Optimized sample records query, load time 2.5s → 0.3s. Lighthouse score improved to 88.</span></div></td></tr>
+    </tbody></table>
+  </div>
+  <div class="cf">
+    <div><h4>Tools Used</h4><div class="tl"><span class="tt">Chrome Lighthouse</span><span class="tt">TinyPNG</span><span class="tt">CSS/JS Minifiers</span><span class="tt">MySQL EXPLAIN</span><span class="tt">XAMPP</span></div></div>
+    <div><h4>Knowledge Gained</h4><ul class="kl"><li>Chrome Lighthouse: FCP, LCP, TTI metrics</li><li>Image optimization (lossless vs lossy)</li><li>JavaScript lazy loading and defer attributes</li><li>Core Web Vitals (LCP, FID, CLS)</li><li>Critical rendering path optimization</li></ul></div>
+  </div>
+</div>
+</div>
+
+<!-- ══════════════════════ WEEK 19 ══════════════════════ -->
+<div class="sl m5" data-m="5">
+<div class="wc">
+  <div class="ch2">
+    <div><span class="wb">Week 19 · Month 5</span><div class="wt">Mobile &amp; Cross-Browser Testing</div><div class="wd">Dec 8 – 12, 2025</div></div>
+    <div class="wm"><span class="hb">28</span><span class="hl">Hours</span></div>
+  </div>
+  <div class="cb">
+    <table class="dt"><thead><tr><th>Day</th><th>Date</th><th>Task No. &amp; Work Done</th></tr></thead>
+    <tbody>
+      <tr><td class="dn">Mon</td><td class="dd">08 Dec</td><td><div class="tc"><span class="tk">M-05/E7</span><span class="tx">Conducted mobile testing on Android and iOS, fixed touch targets below 44px.</span></div></td></tr>
+      <tr><td class="dn">Tue</td><td class="dd">09 Dec</td><td><div class="tc"><span class="tk">M-05/E7</span><span class="tx">Optimized table layouts for mobile with horizontal scroll and sticky first column.</span></div></td></tr>
+      <tr class="lv"><td class="dn">Wed</td><td class="dd">10 Dec</td><td><div class="tc"><span class="tk plain">—</span><span class="tx">🌿 Casual Leave</span></div></td></tr>
+      <tr><td class="dn">Thu</td><td class="dd">11 Dec</td><td><div class="tc"><span class="tk">M-05/E7</span><span class="tx">Fixed mobile Safari keyboard overlap and resolved CSS flexbox inconsistencies across browsers.</span></div></td></tr>
+      <tr><td class="dn">Fri</td><td class="dd">12 Dec</td><td><div class="tc"><span class="tk">M-07/G6</span><span class="tx">Performed cross-browser print testing, fixed PDF generation issues in Firefox.</span></div></td></tr>
+    </tbody></table>
+  </div>
+  <div class="cf">
+    <div><h4>Tools Used</h4><div class="tl"><span class="tt">BrowserStack</span><span class="tt">Chrome DevTools</span><span class="tt">Safari Web Inspector</span><span class="tt">Firefox DevTools</span></div></div>
+    <div><h4>Knowledge Gained</h4><ul class="kl"><li>Mobile-first responsive design (44px touch targets)</li><li>CSS vendor prefixes (-webkit-, -moz-, -ms-)</li><li>Mobile Safari visualViewport API</li><li>CSS position: sticky for table columns</li><li>Real device vs emulator testing differences</li></ul></div>
+  </div>
+</div>
+</div>
+
+<!-- ══════════════════════ WEEK 20 ══════════════════════ -->
+<div class="sl m5" data-m="5">
+<div class="wc">
+  <div class="ch2">
+    <div><span class="wb">Week 20 · Month 5</span><div class="wt">Accessibility Improvements</div><div class="wd">Dec 15 – 19, 2025</div></div>
+    <div class="wm"><span class="hb">28</span><span class="hl">Hours</span></div>
+  </div>
+  <div class="cb">
+    <table class="dt"><thead><tr><th>Day</th><th>Date</th><th>Task No. &amp; Work Done</th></tr></thead>
+    <tbody>
+      <tr><td class="dn">Mon</td><td class="dd">15 Dec</td><td><div class="tc"><span class="tk">M-05/E7</span><span class="tx">Added ARIA labels to all interactive elements and proper semantic HTML5 tags.</span></div></td></tr>
+      <tr><td class="dn">Tue</td><td class="dd">16 Dec</td><td><div class="tc"><span class="tk">M-05/E7</span><span class="tx">Enhanced keyboard navigation with proper tab order and visible focus indicators.</span></div></td></tr>
+      <tr><td class="dn">Wed</td><td class="dd">17 Dec</td><td><div class="tc"><span class="tk">M-05/E7</span><span class="tx">Improved color contrast to WCAG 2.1 AA standards, added AJAX loading indicators.</span></div></td></tr>
+      <tr class="lv"><td class="dn">Thu</td><td class="dd">18 Dec</td><td><div class="tc"><span class="tk plain">—</span><span class="tx">🌿 Casual Leave</span></div></td></tr>
+      <tr><td class="dn">Fri</td><td class="dd">19 Dec</td><td><div class="tc"><span class="tk">M-07/G6</span><span class="tx">Tested with NVDA screen reader, fixed modal dialog announcement issues.</span></div></td></tr>
+    </tbody></table>
+  </div>
+  <div class="cf">
+    <div><h4>Tools Used</h4><div class="tl"><span class="tt">axe DevTools</span><span class="tt">NVDA Screen Reader</span><span class="tt">WAVE Tool</span><span class="tt">Color Contrast Analyzer</span></div></div>
+    <div><h4>Knowledge Gained</h4><ul class="kl"><li>WCAG 2.1 standards (A, AA, AAA levels)</li><li>ARIA attributes (aria-label, aria-live, aria-hidden)</li><li>Semantic HTML5 (nav, main, aside, article)</li><li>Color contrast: 4.5:1 normal, 3:1 large text</li><li>ARIA live regions for dynamic content</li></ul></div>
+  </div>
+</div>
+</div>
+
+<!-- ══════════════════════ WEEK 21 ══════════════════════ -->
+<div class="sl m5" data-m="5">
+<div class="wc">
+  <div class="ch2">
+    <div><span class="wb">Week 21 · Month 5</span><div class="wt">Security Audit</div><div class="wd">Dec 22 – 26, 2025</div></div>
+    <div class="wm"><span class="hb">28</span><span class="hl">Hours</span></div>
+  </div>
+  <div class="cb">
+    <table class="dt"><thead><tr><th>Day</th><th>Date</th><th>Task No. &amp; Work Done</th></tr></thead>
+    <tbody>
+      <tr><td class="dn">Mon</td><td class="dd">22 Dec</td><td><div class="tc"><span class="tk">M-07/G6</span><span class="tx">Audited authentication system, verified bcrypt password hashing with cost factor 12.</span></div></td></tr>
+      <tr><td class="dn">Tue</td><td class="dd">23 Dec</td><td><div class="tc"><span class="tk">M-07/G6</span><span class="tx">Tested CSRF token validation across all POST, PUT and DELETE operations.</span></div></td></tr>
+      <tr><td class="dn">Wed</td><td class="dd">24 Dec</td><td><div class="tc"><span class="tk">M-07/G6</span><span class="tx">Tested SQL injection vulnerabilities, confirmed all queries use prepared statements.</span></div></td></tr>
+      <tr class="hol"><td class="dn">Thu</td><td class="dd">25 Dec</td><td><div class="tc"><span class="tk plain">—</span><span class="tx">🎄 Public Holiday – Christmas Day</span></div></td></tr>
+      <tr><td class="dn">Fri</td><td class="dd">26 Dec</td><td><div class="tc"><span class="tk">M-07/G6</span><span class="tx">Verified XSS prevention in all output fields, reviewed findings and prepared compliance report.</span></div></td></tr>
+    </tbody></table>
+  </div>
+  <div class="cf">
+    <div><h4>Tools Used</h4><div class="tl"><span class="tt">Burp Suite</span><span class="tt">OWASP ZAP</span><span class="tt">Postman</span><span class="tt">SQL Payload Lists</span><span class="tt">Chrome DevTools</span></div></div>
+    <div><h4>Knowledge Gained</h4><ul class="kl"><li>Penetration testing (Burp Suite, OWASP ZAP)</li><li>CSRF token validation and attack prevention</li><li>SQL injection payloads (UNION, OR 1=1)</li><li>XSS types: Stored, Reflected, DOM-based</li><li>Secure error handling (no stack traces in production)</li></ul></div>
+  </div>
+</div>
+</div>
+
+<!-- ══════════════════════ WEEK 22 ══════════════════════ -->
+<div class="sl m5" data-m="5">
+<div class="wc">
+  <div class="ch2">
+    <div><span class="wb">Week 22 · Month 5</span><div class="wt">Code Cleanup &amp; Documentation</div><div class="wd">Dec 29, 2025 – Jan 2, 2026</div></div>
+    <div class="wm"><span class="hb">28</span><span class="hl">Hours</span></div>
+  </div>
+  <div class="cb">
+    <table class="dt"><thead><tr><th>Day</th><th>Date</th><th>Task No. &amp; Work Done</th></tr></thead>
+    <tbody>
+      <tr><td class="dn">Mon</td><td class="dd">29 Dec</td><td><div class="tc"><span class="tk">M-05/E5</span><span class="tx">Removed debug code and console.log statements, cleaned up commented-out code blocks.</span></div></td></tr>
+      <tr><td class="dn">Tue</td><td class="dd">30 Dec</td><td><div class="tc"><span class="tk">M-05/E5</span><span class="tx">Removed redundant SQL JOINs and consolidated duplicate queries into reusable model methods.</span></div></td></tr>
+      <tr><td class="dn">Wed</td><td class="dd">31 Dec</td><td><div class="tc"><span class="tk">M-05/E5</span><span class="tx">Refactored CSS, removed duplicate styles and organized components using CSS variables.</span></div></td></tr>
+      <tr><td class="dn">Thu</td><td class="dd">01 Jan</td><td><div class="tc"><span class="tk">M-04/D9</span><span class="tx">Prepared User Guide Part 2 covering sample submission, form generation and export features.</span></div></td></tr>
+      <tr class="hol"><td class="dn">Fri</td><td class="dd">02 Jan</td><td><div class="tc"><span class="tk plain">—</span><span class="tx">🏛 Public Holiday – Duruthu Full Moon Poya Day</span></div></td></tr>
+    </tbody></table>
+  </div>
+  <div class="cf">
+    <div><h4>Tools Used</h4><div class="tl"><span class="tt">VS Code</span><span class="tt">ESLint</span><span class="tt">PHP_CodeSniffer</span><span class="tt">Git</span><span class="tt">MS Word</span><span class="tt">Snagit</span></div></div>
+    <div><h4>Knowledge Gained</h4><ul class="kl"><li>Code cleanup and technical debt management</li><li>Linting tools (ESLint, PHP_CodeSniffer)</li><li>CSS BEM methodology and component architecture</li><li>CSS custom properties (variables) for theming</li><li>SQL optimization by removing unnecessary JOINs</li></ul></div>
+  </div>
+</div>
+</div>
+
+<!-- ══════════════════════ WEEK 23 ══════════════════════ -->
+<div class="sl m6" data-m="6">
+<div class="wc">
+  <div class="ch2">
+    <div><span class="wb">Week 23 · Month 6</span><div class="wt">Quality Assurance Testing</div><div class="wd">Jan 5 – 9, 2026</div></div>
+    <div class="wm"><span class="hb">28</span><span class="hl">Hours</span></div>
+  </div>
+  <div class="cb">
+    <table class="dt"><thead><tr><th>Day</th><th>Date</th><th>Task No. &amp; Work Done</th></tr></thead>
+    <tbody>
+      <tr><td class="dn">Mon</td><td class="dd">05 Jan</td><td><div class="tc"><span class="tk">M-07/G6</span><span class="tx">Executed full QA test plan across all modules, documented pass/fail status for each case.</span></div></td></tr>
+      <tr><td class="dn">Tue</td><td class="dd">06 Jan</td><td><div class="tc"><span class="tk">M-07/G6</span><span class="tx">Fixed critical bug in sample code generation past sequence 9999, added year rollover logic.</span></div></td></tr>
+      <tr class="lv"><td class="dn">Wed</td><td class="dd">07 Jan</td><td><div class="tc"><span class="tk plain">—</span><span class="tx">🌿 Casual Leave</span></div></td></tr>
+      <tr><td class="dn">Thu</td><td class="dd">08 Jan</td><td><div class="tc"><span class="tk">M-07/G6</span><span class="tx">Resolved medium bugs in form generation and payment modal, fixed low-priority UI issues.</span></div></td></tr>
+      <tr><td class="dn">Fri</td><td class="dd">09 Jan</td><td><div class="tc"><span class="tk">M-07/G6</span><span class="tx">Re-tested all failed cases, verified bug fixes and updated test tracking spreadsheet.</span></div></td></tr>
+    </tbody></table>
+  </div>
+  <div class="cf">
+    <div><h4>Tools Used</h4><div class="tl"><span class="tt">VS Code</span><span class="tt">Excel (Test Tracking)</span><span class="tt">Chrome DevTools</span><span class="tt">MySQL Workbench</span><span class="tt">Postman</span></div></div>
+    <div><h4>Knowledge Gained</h4><ul class="kl"><li>QA methodology with documented test cases</li><li>Bug priority classification (Critical to Trivial)</li><li>Regression testing after each bug fix</li><li>Edge case testing (boundary values, null inputs)</li><li>Root cause analysis using 5 Whys technique</li></ul></div>
+  </div>
+</div>
+</div>
+
+<!-- ══════════════════════ WEEK 24 ══════════════════════ -->
+<div class="sl m6" data-m="6">
+<div class="wc">
+  <div class="ch2">
+    <div><span class="wb">Week 24 · Month 6</span><div class="wt">User Acceptance Testing</div><div class="wd">Jan 12 – 16, 2026</div></div>
+    <div class="wm"><span class="hb">28</span><span class="hl">Hours</span></div>
+  </div>
+  <div class="cb">
+    <table class="dt"><thead><tr><th>Day</th><th>Date</th><th>Task No. &amp; Work Done</th></tr></thead>
+    <tbody>
+      <tr><td class="dn">Mon</td><td class="dd">12 Jan</td><td><div class="tc"><span class="tk">M-07/G7</span><span class="tx">Conducted UAT with client lab staff, observed real workflows and collected structured feedback.</span></div></td></tr>
+      <tr><td class="dn">Tue</td><td class="dd">13 Jan</td><td><div class="tc"><span class="tk">M-07/G7</span><span class="tx">Implemented UAT feedback, added delete confirmation dialogs and improved validation messages.</span></div></td></tr>
+      <tr class="hol"><td class="dn">Wed</td><td class="dd">14 Jan</td><td><div class="tc"><span class="tk plain">—</span><span class="tx">🏛 Public Holiday – Tamil Thai Pongal Day</span></div></td></tr>
+      <tr><td class="dn">Thu</td><td class="dd">15 Jan</td><td><div class="tc"><span class="tk">M-07/G6</span><span class="tx">Fixed edge case bugs (null dates, empty lists, special characters), performed final regression testing.</span></div></td></tr>
+      <tr><td class="dn">Fri</td><td class="dd">16 Jan</td><td><div class="tc"><span class="tk">M-07/G6</span><span class="tx">Conducted performance testing with 10 concurrent users, measured and verified response times.</span></div></td></tr>
+    </tbody></table>
+  </div>
+  <div class="cf">
+    <div><h4>Tools Used</h4><div class="tl"><span class="tt">VS Code</span><span class="tt">Apache JMeter</span><span class="tt">UAT Forms</span><span class="tt">Chrome DevTools</span><span class="tt">MySQL Workbench</span></div></div>
+    <div><h4>Knowledge Gained</h4><ul class="kl"><li>UAT process with real end-users</li><li>Observing users in action vs asking preferences</li><li>Defensive programming (null checks, empty arrays)</li><li>Think-aloud protocol sessions for UX research</li><li>Response benchmarks (&lt;200ms excellent, &lt;1s good)</li></ul></div>
+  </div>
+</div>
+</div>
+
+<!-- ══════════════════════ WEEK 25 ══════════════════════ -->
+<div class="sl m6" data-m="6">
+<div class="wc">
+  <div class="ch2">
+    <div><span class="wb">Week 25 · Month 6</span><div class="wt">Security Hardening &amp; Deployment</div><div class="wd">Jan 19 – 23, 2026</div></div>
+    <div class="wm"><span class="hb">28</span><span class="hl">Hours</span></div>
+  </div>
+  <div class="cb">
+    <table class="dt"><thead><tr><th>Day</th><th>Date</th><th>Task No. &amp; Work Done</th></tr></thead>
+    <tbody>
+      <tr><td class="dn">Mon</td><td class="dd">19 Jan</td><td><div class="tc"><span class="tk">M-07/G6</span><span class="tx">Implemented login rate limiting (5 attempts/15 min) and account lockout mechanism.</span></div></td></tr>
+      <tr class="lv"><td class="dn">Tue</td><td class="dd">20 Jan</td><td><div class="tc"><span class="tk plain">—</span><span class="tx">🌿 Casual Leave</span></div></td></tr>
+      <tr><td class="dn">Wed</td><td class="dd">21 Jan</td><td><div class="tc"><span class="tk">M-07/G6</span><span class="tx">Enforced strong password policy, conducted final OWASP Top 10 security audit.</span></div></td></tr>
+      <tr><td class="dn">Thu</td><td class="dd">22 Jan</td><td><div class="tc"><span class="tk">M-07/G6</span><span class="tx">Added security headers in .htaccess (X-Frame-Options, CSP, X-Content-Type-Options).</span></div></td></tr>
+      <tr><td class="dn">Fri</td><td class="dd">23 Jan</td><td><div class="tc"><span class="tk">M-05/E9</span><span class="tx">Deployed web application to client's internal server, configured Apache virtual host and verified live access.</span></div></td></tr>
+    </tbody></table>
+  </div>
+  <div class="cf">
+    <div><h4>Tools Used</h4><div class="tl"><span class="tt">Burp Suite</span><span class="tt">OWASP ZAP</span><span class="tt">securityheaders.com</span><span class="tt">Apache .htaccess</span><span class="tt">XAMPP</span></div></div>
+    <div><h4>Knowledge Gained</h4><ul class="kl"><li>Rate limiting with session/database logging</li><li>Account lockout for brute force protection</li><li>HTTP security headers (X-Frame-Options, CSP)</li><li>Apache virtual host configuration for production</li><li>Defense in depth (multiple security layers)</li></ul></div>
+  </div>
+</div>
+</div>
+
+<!-- ══════════════════════ WEEK 26 ══════════════════════ -->
+<div class="sl m6" data-m="6">
+<div class="wc">
+  <div class="ch2">
+    <div><span class="wb">Week 26 · Month 6</span><div class="wt">Final Documentation &amp; Handover</div><div class="wd">Jan 26 – 30, 2026</div></div>
+    <div class="wm"><span class="hb">35</span><span class="hl">Hours</span></div>
+  </div>
+  <div class="cb">
+    <table class="dt"><thead><tr><th>Day</th><th>Date</th><th>Task No. &amp; Work Done</th></tr></thead>
+    <tbody>
+      <tr><td class="dn">Mon</td><td class="dd">26 Jan</td><td><div class="tc"><span class="tk">M-04/D9</span><span class="tx">Created System Administrator Guide covering installation, configuration and troubleshooting.</span></div></td></tr>
+      <tr><td class="dn">Tue</td><td class="dd">27 Jan</td><td><div class="tc"><span class="tk">M-04/D9</span><span class="tx">Finalized User Manual with workflows, screenshot annotations, FAQs and troubleshooting section.</span></div></td></tr>
+      <tr><td class="dn">Wed</td><td class="dd">28 Jan</td><td><div class="tc"><span class="tk">M-02/B5</span><span class="tx">Prepared Technical Documentation Package with database schema and code architecture diagrams.</span></div></td></tr>
+      <tr><td class="dn">Thu</td><td class="dd">29 Jan</td><td><div class="tc"><span class="tk">M-02/B5</span><span class="tx">Created backup/recovery procedures document and wrote database migration scripts with rollback plan.</span></div></td></tr>
+      <tr><td class="dn">Fri</td><td class="dd">30 Jan</td><td><div class="tc"><span class="tk">M-04/D9</span><span class="tx">Conducted final handover meeting with client's IT team, demonstrated system and completed knowledge transfer.</span></div></td></tr>
+    </tbody></table>
+  </div>
+  <div class="cf">
+    <div><h4>Tools Used</h4><div class="tl"><span class="tt">MS Word</span><span class="tt">draw.io</span><span class="tt">PowerPoint</span><span class="tt">MySQL Workbench</span><span class="tt">7-Zip</span><span class="tt">Git</span></div></div>
+    <div><h4>Knowledge Gained</h4><ul class="kl"><li>System administrator documentation writing</li><li>Deployment checklists with rollback procedures</li><li>End-user manual with step-by-step visual aids</li><li>Database migration scripts with version control</li><li>Knowledge transfer techniques for smooth handover</li></ul></div>
+  </div>
+</div>
+</div>
+
+    </div><!-- /track -->
+  </div><!-- /vp -->
+  <div class="dots" id="dots"></div>
+</section>
+
+<!-- SUMMARY -->
+<div class="summary">
+  <h2><span>Final Summary</span>Internship Overview</h2>
+  <table class="stbl">
+    <tr><td>Duration</td><td>6 months (August 2025 – January 2026)</td></tr>
+    <tr><td>Total Weekdays</td><td>130 days</td></tr>
+    <tr><td>Public Holidays</td><td>7 days (Nikini, Vap, Il, Unduvap, Duruthu Poyas + Christmas + Thai Pongal)</td></tr>
+    <tr><td>Casual Leaves</td><td>14 days (2–3 per month)</td></tr>
+    <tr class="hi"><td>Working Days</td><td>109 days</td></tr>
+    <tr class="hi"><td>Total Hours</td><td>763 hours</td></tr>
+    <tr><td>NVQ Modules</td><td>M-02, M-03, M-04, M-05, M-07</td></tr>
+    <tr><td>Special Event</td><td>Dec 3 – Ocean Day session at client premises</td></tr>
+    <tr><td>Deliverable</td><td>Complete Laboratory Management Web System</td></tr>
+  </table>
+</div>
+
+<script>
+const track = document.getElementById('track');
+const slides = track.querySelectorAll('.sl');
+const ctr = document.getElementById('ctr');
+const dotsEl = document.getElementById('dots');
+const tabs = document.querySelectorAll('.tab');
+const total = slides.length;
+let cur = 0;
+
+slides.forEach((s, i) => {
+  const d = document.createElement('div');
+  d.className = 'dot' + (i === 0 ? ' on' : '');
+  d.addEventListener('click', () => go(i));
+  dotsEl.appendChild(d);
+});
+
+function go(i) {
+  if (i < 0) i = total - 1;
+  if (i >= total) i = 0;
+  cur = i;
+  track.style.transform = `translateX(-${cur * 100}%)`;
+  ctr.textContent = `${cur + 1} / ${total}`;
+  dotsEl.querySelectorAll('.dot').forEach((d, j) => d.classList.toggle('on', j === cur));
+  const m = slides[cur].dataset.m;
+  tabs.forEach(t => t.classList.toggle('on', t.dataset.m === m));
+}
+
+tabs.forEach(t => t.addEventListener('click', () => {
+  const m = t.dataset.m;
+  for (let i = 0; i < total; i++) {
+    if (slides[i].dataset.m === m) { go(i); break; }
+  }
+}));
+
+document.getElementById('prev').addEventListener('click', () => go(cur - 1));
+document.getElementById('next').addEventListener('click', () => go(cur + 1));
+document.addEventListener('keydown', e => {
+  if (e.key === 'ArrowLeft') go(cur - 1);
+  if (e.key === 'ArrowRight') go(cur + 1);
+});
+let tx = 0;
+track.addEventListener('touchstart', e => { tx = e.touches[0].clientX; }, { passive: true });
+track.addEventListener('touchend', e => {
+  const d = tx - e.changedTouches[0].clientX;
+  if (Math.abs(d) > 50) d > 0 ? go(cur + 1) : go(cur - 1);
+}, { passive: true });
+</script>
+</body>
+</html>
